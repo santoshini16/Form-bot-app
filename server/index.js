@@ -9,7 +9,9 @@ const SubmissionRoutes = require('./routes/SubmisstionRoutes');
 const app = express();
 const dotenv = require('dotenv').config();
 const PORT = 3000
-app.use(cors());
+app.use(cors({
+    origin:process.env.CLIENT_URL,
+}));
 app.use(bodyParser.json());
 app.use(express.json())
 
